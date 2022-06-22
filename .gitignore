@@ -1,7 +1,8 @@
 # Anchor, rust
 .anchor/
 node_modules/
-target
+target/
+test-ledger/
 
 # Vite, react
 # Logs

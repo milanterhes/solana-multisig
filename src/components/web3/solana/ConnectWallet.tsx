@@ -1,9 +1,12 @@
 import { Button } from "@chakra-ui/button";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { useContext, useEffect } from "react";
+import idl_json from "../../../../multisig/target/idl/serum_multisig.json";
 import { SolanaWalletModalContext } from "../../../web3/solana/SolanaContext";
-import ConnectModal from "./ConnectModal";
 import { AdapterIcon } from "./AdapterIcon";
+import ConnectModal from "./ConnectModal";
+
+type MultisigIdl = typeof idl_json; // this doesn't work with Program generic for some reason
 
 const ConnectButton = () => {
   const { onOpen } = useContext(SolanaWalletModalContext);
@@ -23,7 +26,7 @@ const DisconnectButton = () => {
 };
 
 const WalletSelector = () => {
-  const { connected, connecting } = useWallet();
+  const { connected, connecting, wallet } = useWallet();
   const { isOpen, onClose } = useContext(SolanaWalletModalContext);
 
   useEffect(() => {

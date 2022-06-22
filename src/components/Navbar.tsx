@@ -5,7 +5,7 @@ import WalletSelector from "./web3/solana/ConnectWallet";
 
 export const Navbar = () => {
   return (
-    <Box borderBottom="1px solid #2a2c30">
+    <Box borderBottom="1px solid #2a2c30" as="nav">
       <Container
         as={HStack}
         maxW="container.xl"

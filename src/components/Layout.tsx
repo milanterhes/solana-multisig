@@ -1,7 +1,7 @@
 import { useDisclosure } from "@chakra-ui/hooks";
+import { Box } from "@chakra-ui/react";
 import React, { PropsWithChildren } from "react";
 import { SolanaWalletModalContext } from "../web3/solana/SolanaContext";
-import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
 
 const Layout: React.FC<PropsWithChildren> = ({ children }) => {
@@ -9,8 +9,9 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <SolanaWalletModalContext.Provider value={solanaWalletModalDisc}>
       <Navbar />
-      <main>{children}</main>
-      <Footer />
+      <Box as="main" flex="1">
+        {children}
+      </Box>
     </SolanaWalletModalContext.Provider>
   );
 };

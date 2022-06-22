@@ -15,7 +15,7 @@ import React, { PropsWithChildren, useMemo } from "react";
 const SolanaContext: React.FC<PropsWithChildren> = ({ children }) => {
   const network = WalletAdapterNetwork.Devnet;
 
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+  // const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
   const wallets = useMemo(
     () => [
@@ -27,7 +27,7 @@ const SolanaContext: React.FC<PropsWithChildren> = ({ children }) => {
   );
 
   return (
-    <ConnectionProvider endpoint={endpoint}>
+    <ConnectionProvider endpoint={"http://127.0.0.1:8899"}>
       <WalletProvider wallets={wallets} autoConnect>
         {children}
       </WalletProvider>

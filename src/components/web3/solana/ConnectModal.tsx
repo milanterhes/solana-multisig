@@ -14,7 +14,7 @@ import { Adapter, WalletReadyState } from "@solana/wallet-adapter-base";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { AdapterIcon } from "./AdapterIcon";
 
-type ConnectModalProps = Required<
+export type CustomModalProps = Required<
   Pick<UseDisclosureProps, "isOpen" | "onClose">
 >;
 
@@ -32,7 +32,7 @@ const WalletRow: React.FC<WalletButtonProps> = ({ adapter }) => {
   );
 };
 
-const ConnectModal: React.FC<ConnectModalProps> = ({ isOpen, onClose }) => {
+const ConnectModal: React.FC<CustomModalProps> = ({ isOpen, onClose }) => {
   const { wallets } = useWallet();
 
   return (
